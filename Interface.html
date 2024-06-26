@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwind-Critérios</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <form name="createDamage" id="createDamage">
+        <div id="fade" class="hide"></div>
+        <div id="modal" class="hide">
+            <div class="modal_header-new">
+                <h5>New Damage</h5>
+            </div>
+            <div class="modal_body">
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="damage_id">Description</label>
+                        <select class="new-select" name="damage_id" id="damage_id" onclick="selected(this.value)">
+
+                            <option value="Não conformidades" selected>Não conformidades</option>
+                            <option value="Rugas - Longitudinal">
+                                <p> Longitudinal
+                                    Wrinkles/Folded layers</p>
+                            </option>
+                            <option value="Rugas - Transversais">
+                                <p>Chordwise
+                                    Wrinkles/Foldes layer</p>
+                            </option>
+                            <option value="Rugas - Almas">
+                                <p>Longitudinal/Chordwise Wrinkles in Webs/ Folded layers</p>
+                            </option>
+                            <option value="Gap ou Ausência de Core - Cascas e Almas">
+                                <p>Gap or Missing Core - Shell and Webs</p>
+                            </option>
+                            <option value="Degrau - Cascas">
+                                <p>Step in shell</p>
+                            </option>
+                            <option value="Tecido Seco na superfície - Cascas">
+                                <p>Dry glass in shell</p>
+                            </option>
+                            <option value="Tecido Semi-Seco - Cascas e Almas">
+                                <p>Semi-Dry glass in Shell and Webs</p>
+                            </option>
+                            <option value="Bolhas - Casca">
+                                <p>Bubble/Air voids on the shell</p>
+                            </option>
+                            <option
+                                value="Corpo Estranho - Cascas e área de colagem (para laminados infudidos ou áreas de colagem)">
+                                <p>FOD - Shell and glue (Only applicable into laminates/bondlines)</p>
+                            </option>
+                            <option value="Trincas transversais - Cascas e Almas">
+                                <p>Transversal - Cracks</p>
+                            </option>
+                            <option value="Trincas Longitudinais - Cascas e Almas">
+                                <p>Longitudinal - Cracks - Shell and Webs</p>
+                            </option>
+                            <option value="Trincas Transversais - linhas de colagem">
+                                <p>Longitudinal - Cracks - Bondlines</p>
+                            </option>
+                            <option value="Trincas Longitudinais - linhas de colagem">
+                                <p>Longitudinais cracks - Bondlines</p>
+                            </option>
+                            <option value="Descolamentos  - Danos na alma/T-pultrudado">
+                                <p>Damaged in WEB - T-pultrusion </p>
+                            </option>
+                            <option value="Trincas - Inserto do BF">
+                                <p>Cracks - TE Insert</p>
+                            </option>
+                            <option value="Linhas de colagem - BA/BF">
+                                <p> Bondlines- LE and TE</p>
+                            </option>
+                            <option value="Vazio área de colagem ou Squeeze Out Pobre -Almas">
+                                <p>Paste void or Poor squeeze out - Webs</p>
+                            </option>
+                            <option value="Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz">
+                                <p>Paste Void - Upstand (LE and TE) - 2000 mm from root face </p>
+                            </option>
+                            <option value="Materiais soltos em geral - Interno da pá">
+                                <p>General loose materials - Blade chambers</p>
+                            </option>
+                            <option value="Delaminações - Cascas e Almas">
+                                <p>Delaminations - Shell and Webs</p>
+                            </option>
+                            <option value="Delaminações - T-pultrudado">
+                                <p>Delaminations - T-pultrusion (Web Wall)</p>
+                            </option>
+                            <option value="LPS/LCTU - Root Chamber">
+                                <p>LPS/LCTU - Root Chamber </p>
+                            </option>
+                            <option value="Danos ocasionados por raios/queimados/Flashover">
+                                <p>Lamination Damaged/Burned/Flashover</p>
+                            </option>
+                            <option value="Camada rompida devido lixamento ou remocao de nylon">
+                                <p>Damaged layer by sanding/Grinding or peel ply removal</p>
+                            </option>
+                            <option value="Furos no laminado - Casca">
+                                <p>Holes in laminate - Shell</p>
+                            </option>
+                            <option value="Furos - Inserto do BF">
+                                <p>Holes in laminate - TE Insert</p>
+                            </option>
+                            <option value="Ausência de camada (Preform) - LE/TE - Casca">
+                                <p>Missing preform in LE/TE - Shell</p>
+                            </option>
+                            <option value="Camada contaminada">
+                                <p>Contaminated Layer</p>
+                            </option>
+
+
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="layer_id">Layer</label>
+                        <select name="layer_id" class="new-select" id="layer_id" required>
+                            <option selected>Select</option>
+                            <option value="1">No Issues</option>
+                            <option value="2">Light Structural</option>
+                            <option value="3">Minor Structural</option>
+                            <option value="4">Medium Structural</option>
+                            <option value="5">High Structural</option>
+                            <option value="6">Critical Structural</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="progression">Progression</label>
+                        <select name="progression" class="new-select" id="progression" required>
+                            <option value="" selected>Select</option>
+                            <option>New</option>
+                            <option>Change</option>
+                            <option>Keep</option>
+                            <option>Increased</option>
+                            <option>Done</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group-new" name="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="section">Section</label>
+                        <select name="section" class="new-select" id="section" required>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <label for="uid">Association</label>
+                    <input class="form-control-new" type="numeric" name="uid" id="uid" disabled>
+                    <a href="#" id="damage-picture"></a>
+                </div>
+                <div class="form-group-new">
+                    <div class="col-sm-12" name="col-sm-12">
+                        <label for="severity">Severity <br></label>
+
+                        <select class="new-select" name="severity" id="severity" required>
+                            <option selected>Severity</option>
+                            <option value="8">0</option>
+                            <option value="9">1</option>
+                            <option value="10">2</option>
+                            <option value="11">3</option>
+                            <option value="12">4</option>
+                            <option value="13">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="recommendation_id">Recommendation</label>
+                        <select class="new-select" name="recommendation_id" id="recommendation_id" required>
+                            <option selected>Select</option>
+                            <option value="14">N/A</option>
+                            <option value="15">Monitoring at the next inspection opportunity</option>
+                            <option value="16">Monitoring within 12 months period</option>
+                            <option value="17">Repair within 6 months</option>
+                            <option value="18">Repair within 3 months</option>
+                            <option value="19">Stop the turbine and repair</option>
+                            <option value="20">Immediate clean up</option>
+                            <option value="21">Repair within 1 week</option>
+                            
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <div class="col-sm-4">
+                        <label for="location">Location (m)</label>
+                        <input class="form-control-new" type="numeric" name="location" id="location" placeholder="33.2">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="length">Length (mm)</label>
+                        <input class="form-control-new" type="number" name="length" id="length" placeholder="200">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="width">Width (mm)</label>
+                        <input class="form-control-new" type="number" name="width" id="width" placeholder="300">
+                    </div>
+                </div>
+                
+                <input type="hidden" name="section" value="{{ $region }}">
+                <input type="hidden" name="windblade_id" value="{{ $blade->windblade_id ?? 0 }}">
+                <input type="hidden" name="workorder_id" value="{{ $blade->workorder_id ?? 0 }}">
+                <input type="hidden" name="gallery_id" id="gallery_id">
+                <input type="hidden" name="image_url" id="image_url">
+                <input type="hidden" name="positions" id="positions">
+                <input type="hidden" name="method" id="method">
+               
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="comment">Comment</label>
+                        <textarea name="comment" class="form-control-new" id="comment" placeholder="Comment"></textarea>
+                    </div>
+                </div>
+
+                <div class="btn-box-new">
+                    <button id="btn-submit" type="submit">Save</button>
+                    <a class="btn-close-link" id="close-modal">Close</a>
+
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </form>
+    <form name="formRugasL" method="phost" class="form" id="form0">
+        <h3>Rugas - Longitudinal</h3>
+        <section class="SecAltura" name="SecAltura">
+            <h3>Qual altura da ruga?</h3>
+            <input type="radio" name="altura1" id="1" class="grupo" required>
+            <label for="1"> <strong>Regiões de colagem: </strong> Altura ≤ 2mm </label>
+            <br>
+            <input type="radio" name="altura1" id="2" class="grupo" required>
+            <label for="2"><strong>Foras de área de colagem:</strong> Altura < 5mm</label>
+        </section>
+        <h4>Caso em que altura seja maior que os valores minimos para as regiões dentro e fora da área de colagem</h4>
+        <section class="SecSinais">
+            <h3>Existem sinais de trincas ou delaminações?</h3>
+            <input type="radio" name="propagacao3" id="3" class="grupo" required>
+            <label for="3">Com sinais</label>
+            <br>
+            <input type="radio" name="propagacao3" id="4" class="grupo" required>
+            <label for="4">Sem sinais</label>
+        </section>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao3" id="5" class="grupo" required>
+            <label for="5">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao3" id="6" class="grupo" required>
+            <label for="6">Tempo < 1 ano</label>
+        </section>
+
+        <section class="SecTamanho">
+            <h3>Qual o tamanho da ruga</h3>
+            <input type="radio" name="tamanho1" id="7" class="grupo" required>
+            <label for="7"> Tamanho ≤ 500mm</label>
+            <br>
+            <input type="radio" name="tamanho1" id="8" class="grupo" required>
+            <label for="8">Tamanho > 500mm</label>
+        </section>
+
+        <section class="SecLuz">
+            <h3>Existe luz passante ?</h3>
+            <input type="radio" name="luz1" id="9" class="grupo" required>
+            <label for="9">Com luz possante</label>
+            <br>
+            <input type="radio" name="luz1" id="10" class="grupo"  required>
+            <label for="10">Sem luz passante</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar0()">
+        </aside>
+    </form>
+    <form name="form1RugasT" method="phost" class="form" id="form1">
+        <h3>Rugas - Transversais</h3>
+
+        <section class="SecAltura" name="SecAltura">
+            <h3>Qual altura da ruga?</h3>
+            <input type="radio" name="altura" id="11" class="grupo" required>
+            <label for="11">Altura ≤ 2mm </label>
+                    <br>
+                    <input type="radio" name="altura" id="12" class="grupo" required>
+                    <label for="12">Altura > 2mm</label>
+        </section>
+        <section class="SecSinais">
+            <h3>Existem sinais de trincas ou delaminações?</h3>
+            <input type="radio" name="propagacao" id="13" class="grupo" required>
+            <label for="13">Com sinais</label>
+            <br>
+            <input type="radio" name="propagacao" id="14" class="grupo" required>
+            <label for="14">Sem sinais</label>
+        </section>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao" id="15" class="grupo" required>
+            <label for="15">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao" id="015" class="grupo" required>
+            <label for="015">Tempo < 1 ano</label>
+        </section>
+
+        <section class="SecTamanho">
+            <h3>Qual o tamanho da ruga</h3>
+            <input type="radio" name="tamanho" id="16" class="grupo" required>
+            <label for="16"> Tamanho ≤ 300mm</label>
+            <br>
+            <input type="radio" name="tamanho" id="17" class="grupo" required>
+            <label for="17">Tamanho > 300mm</label>
+        </section>
+
+        <section class="SecLuz">
+            <h3>Existe luz passante ?</h3>
+            <input type="radio" name="luz" id="18" class="grupo" required>
+            <label for="18">Com luz possante</label>
+            <br>
+            <input type="radio" name="luz" id="19" class="grupo" required>
+            <label for="19">Sem luz passante</label>
+        </section>
+        <br>
+        </section>
+        </br>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar1()">
+        </aside>
+    </form>
+    <form name="formRugasAlma" method="phost" class="form" id="form2">
+        <h3>Rugas - Almas</h3>
+        <section class="SecH">
+            <h3>H ≤ 1mm?<strong>(Qualquer lado "L")</strong></h3>
+            <input type="radio" name="H" id="20" class="grupo" required>
+            <label for="20"> Sim </label>
+            <br>
+            <input type="radio" name="H" id="21" class="grupo" required>
+            <label for="21"> Não </label>
+        </section>
+        <section class="SecAltura" name="SecAltura">
+            <h3>Qual altura da ruga?</h3>
+            <input type="radio" name="altura2" id="22" class="grupo" required>
+            <label for="22">Altura < 2mm </label>
+                    <br>
+                    <input type="radio" name="altura2" id="23" class="grupo" required>
+                    <label for="23">Altura > 2mm</label>
+        </section>
+        <section class="SecTamanho">
+            <h3>Qual o tamanho da ruga?</h3>
+            <input type="radio" name="tamanho2" id="24" class="grupo" required>
+            <label for="24"> Tamanho ≤ 100mm</label>
+            <br>
+            <input type="radio" name="tamanho2" id="25" class="grupo" required>
+            <label for="25">Tamanho ≤ 1000mm</label>
+            <br>
+            <input type="radio" name="tamanho2" id="26" class="grupo" required>
+            <label for="26">Tamanho > 1000mm</label>
+
+        </section>
+
+        <section class="SecSinais">
+            <h3>Existem sinais de trincas ou delaminações?</h3>
+            <input type="radio" name="propagacao4" id="27" class="grupo" required>
+            <label for="27">Com sinais</label>
+            <br>
+            <input type="radio" name="propagacao4" id="28" class="grupo" required>
+            <label for="28">Sem sinais</label>
+        </section>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao4" id="29" class="grupo" required>
+            <label for="29">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao4" id="30" class="grupo" required>
+            <label for="30">Tempo < 1 ano</label>
+        </section>
+        <section class="SecDanosCore">
+            <h3>O dano esta na região do core?</h3>
+            <input type="radio" name="danoCore" id="31" class="grupo" required>
+            <label for="31">Fora da região do core</label>
+            <br>
+            <input type="radio" name="danoCore" id="32" class="grupo" required>
+            <label for="32">Dentro da região do core</label>
+        </section>
+
+
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar2()">
+        </aside>
+    </form>
+
+    <form name="formGapAusCore" method="phost" class="form" id="form3">
+        <h3>Gap ou Ausência de Core - Cascas e Almas</h3>
+        <section class="SecTamGap">
+            <h3>Tamanho do Gap</h3>
+            <input type="radio" name="gap" id="33" class="grupo" required>
+            <label for="33">Gap ≤ 5mm</label>
+            <br>
+            <input type="radio" name="gap" id="34" class="grupo" required>
+            <label for="34">Gap > 5mm</label>
+        </section>
+        <section class="SecPreenResina">
+            <h3> Gap preenchido com resina?</h3>
+            <input type="radio" name="resina" id="35" class="grupo" required>
+            <label for="35">Sim</label>
+            <br>
+            <input type="radio" name="resina" id="36" class="grupo" required>
+            <label for="36">Não</label>
+        </section>
+        <section class="SecColisaoRul">
+            <h3> Possui qualquer colisão, amassado ou rugas?</h3>
+            <input type="radio" name="colisao" id="37" class="grupo" required>
+            <label for="37">Sim</label>
+            <br>
+            <input type="radio" name="colisao" id="38" class="grupo" required>
+            <label for="38">Não</label>
+        </section>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao5" id="39" class="grupo" required>
+            <label for="39">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao5" id="40" class="grupo" required>
+            <label for="40">Tempo < 1 ano</label>
+        </section>
+        <section class="SecSinais">
+            <h3>Existem sinais de trincas ou delaminações?</h3>
+            <input type="radio" name="propagacao5" id="41" class="grupo" required>
+            <label for="41">Com sinais</label>
+            <br>
+            <input type="radio" name="propagacao5" id="42" class="grupo" required>
+            <label for="42">Sem sinais</label>
+        </section>
+        <section class="SecDelamPass">
+            <h3>Possui delaminações passantes na região?</h3>
+            <input type="radio" name="delaPass" id="43" class="grupo" required>
+            <label for="43">Sim</label>
+            <br>
+            <input type="radio" name="delaPass" id="44" class="grupo" required>
+            <label for="44">Não</label>
+        </section>
+        <section class="SecLuz1">
+            <h3>Existe luz passante ?</h3>
+            <input type="radio" name="luz2" id="45" class="grupo" required>
+            <label for="45">Com luz possante</label>
+            <br>
+            <input type="radio" name="luz2" id="46" class="grupo" required>
+            <label for="46">Sem luz passante</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar3()">
+        </aside>
+    </form>
+
+    <form name="formDegrauC" method="phost" class="form" id="form4">
+        <h3>Degrau - Cascas</h3>
+        <section class="SecAlturaD">
+            <h3>Qual altura do degrau?</h3>
+            <input type="radio" name="alturaD" id="47" class="grupo" required>
+            <label for="47">Altura ≤ 2mm </label>
+            <br>
+            <input type="radio" name="alturaD" id="48" class="grupo" required>
+            <label for="48">Altura > 2mm</label>
+        </section>
+        <section class="SecSinais">
+            <h3>Existem sinais de trincas ou delaminações?</h3>
+            <input type="radio" name="propagacao6" id="49" class="grupo" required>
+            <label for="49">Com sinais</label>
+            <br>
+            <input type="radio" name="propagacao6" id="50" class="grupo" required>
+            <label for="50">Sem sinais</label>
+        </section>
+
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao6" id="51" class="grupo" required>
+            <label for="51">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao6" id="53" class="grupo" required>
+            <label for="53">Tempo < 1 ano</label>
+        </section>
+        <section class="SecLengD">
+            <h3>Qual o comprimento do degrau?</h3>
+            <input type="radio" name="compD" id="053" class="grupo" required>
+            <label for="053">Comprimendo ≤ 500mm</label>
+            <br>
+            <input type="radio" name="compD" id="54" class="grupo" required>
+            <label for="54">Comprimendo > 500mm</label>
+        </section>
+        <section class="SecLuz1">
+            <h3>Existe luz passante ?</h3>
+            <input type="radio" name="luz3" id="55" class="grupo" required>
+            <label for="55">Com luz possante</label>
+            <br>
+            <input type="radio" name="luz3" id="56" class="grupo" required>
+            <label for="56">Sem luz passante</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar4()">
+        </aside>
+    </form>
+    <form name="formTecSuperC" method="phost" class="form" id="form5">
+        <h3>Tecido Seco na superfície - Cascas</h3>
+        <h4>* Caso haja presença de danos associados, o tamanho do defeito a ser considerado será a soma da região com
+            tecido seco + defeito associado</h4>
+        <section class="SecLengD">
+            <h3>Tamanho do tecido seco (Comprimento e largura)?</h3>
+            <input type="radio" name="compT" id="57" class="grupo" required>
+            <label for="57">Tamanho ≤ 100mm</label>
+            <br>
+            <input type="radio" name="compT" id="58" class="grupo" required>
+            <label for="58">450 mm ≥ Tamanho > 100 mm </label>
+            <br>
+            <input type="radio" name="compT" id="59" class="grupo" required>
+            <label for="59">Tamanho > 450mm </label>
+        </section>
+
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar5()">
+        </aside>
+    </form>
+
+    <form name="formSemiSec" method="phost" class="form" id="form6">
+        <h3>Tecido Semi-Seco - Cascas e Almas</h3>
+        <h4>* Se houver outro defeito relacionado ao semisseco,
+            como trinca, delaminação, etc., avalie o caso usando a
+            categorização de defeitos associada (trinca, delaminação, etc.)</h4>
+        <section class="SecLengD">
+            <h3>Qual o tamanho do degrau?</h3>
+            <input type="radio" name="compTS" id="60" class="grupo" required>
+            <label for="60">Comprimento ≤ 100mm</label>
+            <br>
+            <input type="radio" name="compTS" id="61" class="grupo" required>
+            <label for="61">Comprimendo > 100mm</label>
+        </section>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao7" id="62" class="grupo" required>
+            <label for="62">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao7" id="062" class="grupo" required>
+            <label for="062">Tempo < 1 ano</label>
+        </section>
+        <section class="SecSinais">
+            <h3>Existem sinais de trincas ou delaminações?</h3>
+            <input type="radio" name="propagacao7" id="63" class="grupo" required>
+            <label for="63">Com sinais</label>
+            <br>
+            <input type="radio" name="propagacao7" id="64" class="grupo" required>
+            <label for="64">Sem sinais</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar6()">
+        </aside>
+    </form>
+
+    <form name="formBolhasC" method="phost" class="form" id="form7">
+        <h3>Bolhas - Casca</h3>
+        <section class="SecLengT">
+            <h3>Qual tamanho da bolha?</h3>
+            <input type="radio" name="tamB" id="65" class="grupo" required>
+            <label for="65">Tamanho ≤ 20 mm x 60 mm </label>
+            <br>
+            <input type="radio" name="tamB" id="66" class="grupo" required>
+            <label for="66">Tamanho ≤ 60 mm x 20 mm</label>
+        </section>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao8" id="67" class="grupo" required>
+            <label for="67">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao8" id="68" class="grupo" required>
+            <label for="68">Tempo < 1 ano</label>
+        </section>
+        <section class="SecLengD">
+            <h3>Qual o comprimento da bolha?</h3>
+            <input type="radio" name="compB" id="69" class="grupo" required>
+            <label for="69">Comprimento ≤ 500mm</label>
+            <br>
+            <input type="radio" name="compB" id="70" class="grupo" required>
+            <label for="70">Comprimento > 500mm</label>
+        </section>
+        <section class="SecSinais">
+            <h3>Existem sinais de trincas ou delaminações?</h3>
+            <input type="radio" name="propagacao8" id="71" class="grupo" required>
+            <label for="71">Com sinais</label>
+            <br>
+            <input type="radio" name="propagacao8" id="72" class="grupo" required>
+            <label for="72">Sem sinais</label>
+        </section>
+        <section class="SecSinaisQ">
+            <h3>Existem laminados com sinais de quebra de fibras?</h3>
+            <input type="radio" name="propagacao9" id="73" class="grupo" required>
+            <label for="73">Com sinais</label>
+            <br>
+            <input type="radio" name="propagacao9" id="74" class="grupo" required>
+            <label for="74">Sem sinais</label>
+        </section>
+        <section class="SecLuz11">
+            <h3>É visivel sinal de luz passante do lado externo
+                a 1 metro de distância a partir do defeito interno?</h3>
+            <input type="radio" name="luz4" id="75" class="grupo" required>
+            <label for="75">Com luz possante</label>
+            <br>
+            <input type="radio" name="luz4" id="76" class="grupo" required>
+            <label for="76">Sem luz passante</label>
+        </section>
+        <section class="SecLuz1">
+            <h3>É visivel sinal de luz passante do lado externo?</h3>
+            <input type="radio" name="luz5" id="77" class="grupo" required>
+            <label for="77">Com luz possante</label>
+            <br>
+            <input type="radio" name="luz5" id="78" class="grupo" required>
+            <label for="78">Sem luz passante</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar7()">
+        </aside>
+    </form>
+    <form name="formCpCascaECol" method="phost" class="form" id="form8">
+        <h3>Corpo Estranho - Cascas e área de colagem
+            (Somente aplicável para laminados infudidos ou áreas de colagem)
+        </h3>
+        <h4> Caso haja sinais de delaminação, aplicar critério de delaminação</h4>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao9" id="79" class="grupo" required>
+            <label for="79">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao9" id="080" class="grupo" required>
+            <label for="080">Tempo < 1 ano</label>
+        </section>
+        <section class="SecSinais">
+            <h3>Existem sinais de trincas ou delaminações?</h3>
+            <input type="radio" name="propagacao10" id="80" class="grupo" required>
+            <label for="80">Com sinais</label>
+            <br>
+            <input type="radio" name="propagacao10" id="81" class="grupo" required>
+            <label for="81">Sem sinais</label>
+        </section>
+        <section class="SecMat">
+            <h3>Qual tipo de material?</h3>
+            <input type="radio" name="mat" id="82" class="grupo" required>
+            <label for="82">Não Metálicos e outros materias condutivos </label>
+            <br>
+            <input type="radio" name="mat" id="83" class="grupo" required>
+            <label for="83">Metálicos e outros materias condutivos</label>
+        </section>
+        <section class="SecTam">
+            <h3>Qual tamanho do material?</h3>
+            <input type="radio" name="tamC" id="84" class="grupo" required>
+            <label for="84">Tamanho ≤ a 2.500 mm²
+            </label>
+            <br>
+            <input type="radio" name="tamC" id="85" class="grupo" required>
+            <label for="85">Tamnho > 2.500 mm²</label>
+        </section>
+
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar8()">
+        </aside>
+    </form>
+
+
+
+    <form name="formTrincasLong" method="phost" class="form" id="form9">
+        <h3>Trincas Longitudinais - Cascas e Almas</h3>
+
+        <section class="SecLengD">
+            <h3>Qual o comprimento da trinca?</h3>
+            <input type="radio" name="compTl" id="86" class="grupo" required>
+            <label for="86">Comprimento < 500 mm</label>
+                    <br>
+                    <input type="radio" name="compTl" id="87" class="grupo" required>
+                    <label for="87">1000 mm ≥ Comprimento ≥ 500 mm</label>
+                    <br>
+                    <input type="radio" name="compTl" id="88" class="grupo" required>
+                    <label for="88">Comprimento > 1000 mm</label>
+        </section>
+
+        <section class="SecLuz1">
+            <h3>É visivel sinal de luz passante do lado externo?</h3>
+            <input type="radio" name="luz6" id="89" class="grupo" required>
+            <label for="89">Com luz possante</label>
+            <br>
+            <input type="radio" name="luz6" id="90" class="grupo" required>
+            <label for="90">Sem luz passante</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar9()">
+        </aside>
+    </form>
+
+    <form name="formTrincasTrans" method="phost" class="form" id="form10">
+        <h3>Trincas transversais - Cascas e Almas</h3>
+        <section class="SecLengD">
+            <h3>Qual a largura da trinca?</h3>
+            <input type="radio" name="compTT" id="91" class="grupo" required>
+            <label for="91">Largura < 300 mm</label>
+                    <br>
+                    <input type="radio" name="compTT" id="92" class="grupo" required>
+                    <label for="92">450 mm ≥ Largura ≥ 300 mm</label>
+                    <br>
+                    <input type="radio" name="compTT" id="93" class="grupo" required>
+                    <label for="93">Largura > 450 mm</label>
+        </section>
+
+        <section class="SecLuz1">
+            <h3>É visivel sinal de luz passante do lado externo?</h3>
+            <input type="radio" name="luz7" id="94" class="grupo" required>
+            <label for="94">Com luz possante</label>
+            <br>
+            <input type="radio" name="luz7" id="95" class="grupo" required>
+            <label for="95">Sem luz passante</label>
+        </section>
+
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar10()">
+        </aside>
+    </form>
+    <form name="formTrincasTransCol" method="phost" class="form" id="form11">
+        <h3>Trincas Transversais - linhas de colagem</h3>
+
+        <section class="SecLengD">
+            <h3>Qual a largura da trinca?</h3>
+            <input type="radio" name="largT" id="96" class="grupo" required>
+            <label for="96">Largura < 2 mm</label>
+                    <br>
+                    <input type="radio" name="largT" id="97" class="grupo" required>
+                    <label for="97">Largura > 2 mm</label>
+        </section>
+        <section class="SecSinais">
+            <h3>Existem sinais de danos associados?</h3>
+            <input type="radio" name="danoAss" id="98" class="grupo" required>
+            <label for="98">Sem sinais</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar11()">
+        </aside>
+    </form>
+
+
+
+    <form name="formTrincasLongCol" method="phost" class="form" id="form12">
+        <h3>Trincas Longitudinais - linhas de colagem</h3>
+        <section class="SecLengD">
+            <h3>Qual o comprimento da trinca?</h3>
+            <input type="radio" name="largTc" id="99" class="grupo" required>
+            <label for="99">Comprimento < 300 mm</label>
+                    <br>
+                    <input type="radio" name="largTc" id="100" class="grupo" required>
+                    <label for="100">Comprimento > 500 mm</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar12()">
+        </aside>
+    </form>
+    <form name="formDescola" method="phost" class="form" id="form13">
+        <h3>Descolamentos - Danos na alma/T-pultrudado</h3>
+        <h4>* Se não houver inspeção anterior disponível, manter como CAT 2</h4>
+        <section class="SecSinais">
+            <h3>Existem sinais de propagação da trinca?</h3>
+            <input type="radio" name="propagação11" id="101" class="grupo" required>
+            <label for="101">Sem sinais</label>
+            <br>
+            <input type="radio" name="propagação11" id="102" class="grupo" required>
+            <label for="102">Com sinais</label>
+        </section>
+        <br>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao10" id="103" class="grupo" required>
+            <label for="103">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao10" id="104" class="grupo" required>
+            <label for="104">Tempo < 1 ano</label>
+        </section>
+        <br>
+        <section class="SecLengD">
+            <h3>Qual o tamanho da trinca?</h3>
+            <input type="radio" name="tamT" id="105" class="grupo" required>
+            <label for="105">Tamanho < 500 mm</label>
+                    <br>
+                    <input type="radio" name="tamT" id="0105" class="grupo" required>
+                    <label for="0105">Tamanho ≥ 500mm</label>
+        </section>
+        <br>
+        <section class="SecDeslo">
+            <h3>Existe descolamento parcial da alma (Descolamento em toda a largura)?</h3>
+            <input type="radio" name="desl" id="106" class="grupo" required>
+            <label for="106">Sim</label>
+            <input type="radio" name="desl" id="107" class="grupo" required>
+            <label for="107">Não</label>
+        </section>
+
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar13()">
+        </aside>
+    </form>
+
+
+    <form name="formTrincasInsBf" method="phost" class="form" id="form14">
+        <h3>Trincas - Inserto do BF</h3>
+
+        <section class="SecLengBF">
+            <h3>Qual comprimento da trinca/delaminação?</h3>
+            <input type="radio" name="tamBF" id="0107" class="grupo" required>
+            <label for="0107">Comprimento ≤ 1.000 mm</label>
+            <br>
+            <input type="radio" name="tamBF" id="108" class="grupo" required>
+            <label for="108"> 1.000 mm < Comprimento ≤ 2.000 mm </label>
+                    <br>
+                    <input type="radio" name="tamBF" id="109" class="grupo" required>
+                    <label for="109">Comprimento > 2.000 mm</label>
+                    <br>
+        </section>
+        <section class="SecDeslo">
+            <h3>Evidências de bordo aberto?</h3>
+            <input type="radio" name="abert" id="110" class="grupo" required>
+            <label for="110">Sim</label>
+            <input type="radio" name="abert" id="111" class="grupo" required>
+            <label for="111">Não</label>
+        </section>
+
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar14()">
+        </aside>
+    </form>
+
+
+    <form name="formLinhasDeColBABF" method="phost" class="form" id="form15">
+        <h3>Linhas de colagem - BA/BF</h3>
+        <section class="SecSquezz">
+            <h3>Squeeze Out é visível ?</h3>
+            <input type="radio" name="squez1" id="112" class="grupo" required>
+            <label for="112">Sim</label>
+            <input type="radio" name="squez1" id="113" class="grupo" required>
+            <label for="113">Não</label>
+        </section>
+        <section class="SecEspLC">
+            <h3>Qual a espessura da linha de colagem?</h3>
+            <input type="radio" name="espL" id="114" class="grupo" required>
+            <label for="114">Espessura ≤10 mm</label>
+            <br>
+            <input type="radio" name="espL" id="115" class="grupo" required>
+            <label for="115">10 mm < Espessura ≤20 mm </label>
+                    <br>
+                    <input type="radio" name="espL" id="116" class="grupo" required>
+                    <label for="116">20 mm < Espessura ≤30 mm</label>
+                            <br>
+                            <input type="radio" name="espL" id="117" class="grupo" required>
+                            <label for="117">Espessura > 30 mm</label>
+                            <br>
+        </section>
+        <section class="SecSinais">
+            <h3>Sinais de descolamento ou delaminação na linha de colagem?</h3>
+            <input type="radio" name="propagação12" id="118" class="grupo" required>
+            <label for="118">Sem sinais</label>
+            <br>
+            <input type="radio" name="propagação12" id="119" class="grupo" required>
+            <label for="119">Com sinais</label>
+        </section>
+
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar15()">
+        </aside>
+    </form>
+    <form name="formVazioAreaColSque" method="phost" class="form" id="form16">
+        <h3>Vazio área de colagem ou Squeeze Out Pobre - Almas</h3>
+        <section class="SecSquezz">
+            <h3>Squeeze Out em ambos os lados?</h3>
+            <input type="radio" name="squez2" id="120" class="grupo" required>
+            <label for="120">Sim</label>
+            <input type="radio" name="squez2" id="121" class="grupo" required>
+            <label for="121">Não</label>
+        </section>
+        <section class="SecLadosOps">
+            <h3>Comprimento das falhas de colagem?</h3>
+            <input type="radio" name="compFC" id="122" class="grupo" required>
+            <label for="122">Falha de um dos lado ≤ 35 mm</label>
+            <br>
+            <input type="radio" name="compFC" id="123" class="grupo" required>
+            <label for="123">Falha de um dos lado > 35 mm</label>
+        </section>
+        <section class="SecLadosOps">
+            <h3>Comprimento das falhas de colagem?</h3>
+            <input type="radio" name="compOut" id="124" class="grupo" required>
+            <label for="124">Outro lado ≤20 mm</label>
+            <br>
+            <input type="radio" name="compOut" id="125" class="grupo" required>
+            <label for="125">Outro lado ≠ 0 mm</label>
+        </section>
+        <section class="SecLados">
+            <h3>Sinais de descolamento ou delaminação na linha de colagem?</h3>
+            <input type="radio" name="propagação13" id="126" class="grupo" required>
+            <label for="126">Sem sinais</label>
+            <br>
+            <input type="radio" name="propagação13" id="127" class="grupo" required>
+            <label for="127">Com sinais</label>
+        </section>
+
+        <section class="SecTec">
+            <h3>O defeito pode ser alcançado pelo técnico?</h3>
+            <input type="radio" name="tec" id="128" class="grupo" required>
+            <label for="128">Sim</label>
+            <br>
+            <input type="radio" name="tec" id="129" class="grupo" required>
+            <label for="129">Não</label>
+        </section>
+
+
+        <section class="SecDespre">
+            <h3> Sinais de desprendimento parcial da alma
+                (Largura inteira descolamento)?</h3>
+            <input type="radio" name="desprend" id="130" class="grupo" required>
+            <label for="130">Não possui sinais</label>
+            <br>
+            <input type="radio" name="desprend" id="131" class="grupo" required>
+            <label for="131">Possui sinais</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar16()">
+        </aside>
+    </form>
+
+
+
+    <form name="formVazioColPestBABF" method="phost" class="form" id="form17">
+        <h3>Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz</h3>
+
+        <section class="SecComp">
+            <h3>Qual o comprimento do vazio?</h3>
+            <input type="radio" name="compPest" id="132" class="grupo" required>
+            <label for="132">Comprimento ≤ 770 mm</label>
+            <br>
+            <input type="radio" name="compPest" id="133" class="grupo" required>
+            <label for="133">Comprimento > 770 mm</label>
+        </section>
+        <br>
+        <section class="SecLarg">
+            <h3>Qual a largura do vazio ?</h3>
+            <input type="radio" name="largPest" id="134" class="grupo" required>
+            <label for="134">Largura ≤ 120 mm</label>
+            <br>
+            <input type="radio" name="largPest" id="135" class="grupo" required>
+            <label for="135">120 mm < Largura ≤ 354 mm</label>
+                    <br>
+                    <input type="radio" name="largPest" id="136" class="grupo" required>
+                    <label for="136">Largura > 354 mm</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar17()">
+        </aside>
+    </form>
+
+    <form name="formMateriaisSoltos" method="phost" class="form" id="form18">
+        <h3>Materiais soltos em geral - Interno da pá</h3>
+        <section class="SecMat">
+            <h3>Qual tipo de material se encontra solto no interno da pá?</h3>
+            <input type="radio" name="MatSol" id="137" class="grupo" required>
+            <label for="137">Fragmentos de qualquer material </label>
+            <br>
+            <section>
+                <input type="radio" name="MatMet" id="138" class="grupo" required>
+                <label for="138">Materiais metálicos</label>
+                <br>
+            </section>
+            <section>
+                <input type="radio" name="MatFragSol" id="139" class="grupo" required>
+                <label for="139">Fragmentos de material fixados à superfície da lâmina</label>
+                <br>
+            </section>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar18()">
+        </aside>
+    </form>
+    <form name="formDelamCA" method="phost" class="form" id="form19">
+        <h3>Delaminações - Cascas e Almas</h3>
+        <section class="SecComp">
+            <h3>Qual o tamanho da delaminação em qualquer direção?</h3>
+            <input type="radio" name="tamDC" id="140" class="grupo" required>
+            <label for="140">Tamanho em < 300 mm </label>
+                    <br>
+                    <input type="radio" name="tamDC" id="141" class="grupo" required>
+                    <label for="141">700 mm ≥ Tamanho ≥ 300 mm</label>
+                    <br>
+                    <input type="radio" name="tamDC" id="142" class="grupo" required>
+                    <label for="142">Tamanho > 700 mm</label>
+                    <br>
+                    <input type="radio" name="tamDC" id="143" class="grupo" required>
+                    <label for="143">450 mm ≥ Tamanho ≥ 300 mm</label>
+        </section>
+        <br>
+        <section class="SecSinais">
+            <h3>Sinais de presença de fibras danificdas?</h3>
+            <input type="radio" name="propagação14" id="144" class="grupo" required>
+            <label for="144">Sem sinais</label>
+            <br>
+            <input type="radio" name="propagação14" id="145" class="grupo" required>
+            <label for="145">Com sinais</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar19()">
+        </aside>
+    </form>
+
+    <form name="formDelamTpul" method="phost" class="form" id="form20">
+        <h3>Delaminações - T-pultrudado</h3>
+        <h4>* Se a distância entre os danos for inferior a 100 mm,
+            eles devem ser considerados como parte do mesmo defeito.
+        </h4>
+
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao11" id="146" class="grupo" required>
+            <label for="146"> Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao11" id="147" class="grupo" required>
+            <label for="147">Tempo < 1 ano</label>
+        </section>
+
+        <section class="SecComp">
+            <h3>Qual o comprimento da delaminação?</h3>
+            <input type="radio" name="compDC1" id="148" class="grupo" required>
+            <label for="148">Comprimento ≤ 1000 mm </label>
+            <br>
+            <input type="radio" name="compDC1" id="149" class="grupo" required>
+            <label for="149">Comprimento > 1000 mm</label>
+
+        </section>
+
+        <section class="SecSinais">
+            <h3>Situação do dano?</h3>
+            <input type="radio" name="1propagação16" id="150" class="grupo" required>
+            <label for="150">Dano sem propagação de trinca</label>
+            <br>
+            <input type="radio" name="2propagação16" id="151" class="grupo" required>
+            <label for="151">Dano em ambos os lados ou R na mesma posição</label>
+            <br>
+            <input type="radio" name="3propagação16" id="152" class="grupo" required>
+            <label for="152">Danos associados como trincas ou descolamentos</label>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar20()">
+        </aside>
+    </form>
+    <form name="formLPSLCTU" method="phost" class="form" id="form21">
+        <h3>LPS/LCTU - Root Chamber</h3>
+        <h3>Situação do sistema</h3>
+        <section class="SecSinaisLPS">
+            <input type="radio" name="caboDesf" id="0153" class="grupo" required>
+            <label for="0153">Cabo desfixado da casca
+                <strong>OU</strong>
+                <br>Porcas/conexões soltas</label>
+            <br>
+        </section>
+        <section class="SecSinaisLPS">
+            <input type="radio" name="porConec" id="153" class="grupo" required>
+            <label for="153">Cabo danificado <strong>OU</strong>
+                <br> qualquer deformação no componente do LPS <strong>OU</strong>
+                <br>Cabo de aterramento temporário fixado ao sistema, após comissionamento</label>
+            <br>
+        </section>
+        <section class="SecSinaisLPS">
+            <input type="radio" name="caboDan" id="154" class="grupo" required>
+            <label for="154">Descontinuidade no sistema LPS - Raiz/LCTU
+                <strong>OU</strong>
+                <br>Cabo LPS quebrado</label>
+            <br>
+        </section>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar21()">
+        </aside>
+    </form>
+
+    <form name="formDanosRaios" method="phost" class="form" id="form22">
+        <h3>Danos ocasionados por raios/queimados/Flashover</h3>
+        <section class="SecComp">
+            <h3>Possui sinais de dando no carbono?</h3>
+            <input type="radio" name="danoR" id="155" class="grupo" required>
+            <label for="155">Sim </label>
+            <br>
+            <input type="radio" name="danoR" id="156" class="grupo" required>
+            <label for="156">Não</label>
+        </section>
+        <section class="SecComp">
+            <h3> Qual o comprimento de quais quer estrago/queimado/arco elétrico(qualquer direção) ?</h3>
+            <input type="radio" name="compRaio" id="157" class="grupo" required>
+            <label for="157"> Comprimento ≤ 300 mm </label>
+            <br>
+            <input type="radio" name="compRaio" id="158" class="grupo" required>
+            <label for="158">300 mm > Comprimento ≤450 mm </label>
+            <br>
+            <input type="radio" name="compRaio" id="159" class="grupo" required>
+            <label for="159">Comprimento > 450 mm </label>
+        </section>
+        <section class="SecComp">
+            <h3>Qual a area danificada pelo dano?</h3>
+            <input type="radio" name="danoArea" id="160" class="grupo" required>
+            <label for="160">Área danificada ≤ 40.000 mm² </label>
+            <br>
+            <input type="radio" name="danoArea" id="161" class="grupo" required>
+            <label for="161">Área danificada > 40.000 mm²</label>
+        </section>
+        <section class="SecComp">
+            <h3>Qual a distancia do dano para o carbono?</h3>
+            <input type="radio" name="distanC" id="162" class="grupo" required>
+            <label for="162">Distância ≥ 150 mm² </label>
+            <br>
+            <input type="radio" name="distanC" id="163" class="grupo" required>
+            <label for="163">Distância < 150 mm²</label>
+        </section>
+
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar22()">
+        </aside>
+    </form>
+
+    <form name="formCamadaRomp" method="phost" class="form" id="form23">
+        <h3>Camada rompida devido lixamento ou remocao de nylon</h3>
+        <section class="SecSinais">
+            <h3>Sinais de desenvolvimento do dano?</h3>
+            <input type="radio" name="propagação17" id="164" class="grupo" required>
+            <label for="164">Sem sinais de desenvolvimento de dano</label>
+            <br>
+        </section>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao12" id="165" class="grupo" required>
+            <label for="165">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao12" id="166" class="grupo" required>
+            <label for="166">Tempo < 1 ano</label>
+        </section>
+        <br>
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar23()">
+        </aside>
+    </form>
+
+    <form name="formFurosLamC" method="phost" class="form" id="form24">
+        <h3>Furos no laminado - Casca</h3>
+        <h4>* Caso não seja possível avaliação, manter como severidade 2</h4>
+        <section class="SecDiam">
+            <h3>Qual a situação dos furos?</h3>
+            <input type="radio" name="diam1" id="167" class="grupo" required>
+            <label for="167">Diâmetro do furo: ≤25 mm </label>
+            <br>
+            <input type="radio" name="diam2" id="168" class="grupo" required>
+            <label for="168">Distância entre os furos ≥ 100 mm </label>
+            <br>
+            <input type="radio" name="diam3" id="169" class="grupo" required>
+            <label for="169">Distância entre o furo e o carbono ≥ Diâmetro do furo</label>
+        </section>
+        <section class="SecSinais">
+            <h3>Sinais de desenvolvimento do dano(trincas ou delaminações)?</h3>
+            <input type="radio" name="propagação18" id="170" class="grupo" required>
+            <label for="170">Sem sinais de desenvolvimento de dano</label>
+
+        </section>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao13" id="171" class="grupo" required>
+            <label for="171">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao13" id="172" class="grupo" required>
+            <label for="172">Tempo < 1 ano</label>
+        </section>
+
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar24()">
+        </aside>
+    </form>
+
+    <form name="formFurosLamBF" method="phost" class="form" id="form25">
+        <h3>Furos - Inserto do BF</h3>
+        <section class="SecSinais">
+            <h3>Sinais de desenvolvimento do dano(trincas ou delaminações)?</h3>
+            <input type="radio" name="propagação19" id="173" class="grupo" required>
+            <label for="173">Sem sinais de desenvolvimento de dano</label>
+            <br>
+            <input type="radio" name="propagação19" id="174" class="grupo" required>
+            <label for="174">Possui sinais de desenvolvimento de dano</label>
+            <br>
+        </section>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao14" id="175" class="grupo" required>
+            <label for="175">Tempo > 1 ano</label>
+            <br>
+        </section>
+
+        <aside>
+            <input type="button" id="analise" value="Analisar" onclick="carregar25()">
+        </aside>
+    </form>
+
+    <form name="formAusencia" method="phost" class="form" id="form26">
+        <h3>Ausência de camada (Preform) - LE/TE - Casca</h3>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao1" id="176" class="grupo" required>
+            <label for="176">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao1" id="177" class="grupo" required>
+            <label for="177">Tempo < 1 ano</label>
+        </section>
+
+        <section class="SecSinais">
+            <h3>Existem sinais de trincas ou delaminações?</h3>
+            <input type="radio" name="propagacao1" id="178" class="grupo" required>
+            <label for="178">Com sinais</label>
+            <br>
+            <input type="radio" name="propagacao1" id="179" class="grupo" required>
+            <label for="179">Sem sinais</label>
+            <aside>
+                <input type="button" id="analise" value="Analisar" onclick="carregar26()">
+            </aside>
+        </section>
+    </form>
+
+    <form name="camadaCont" method="phost" class="form" id="form27">
+        <h3>Camada contaminada</h3>
+        <section class="SecTempo">
+            <h3>Qual tempo de operação da pá?</h3>
+            <input type="radio" name="operacao2" id="180" class="grupo" required>
+            <label for="180">Tempo > 1 ano</label>
+            <br>
+            <input type="radio" name="operacao2" id="181" class="grupo" required>
+            <label for="181">Tempo < 1 ano</label>
+        </section>
+
+        <section class="SecSinais">
+            <h3>Existem sinais de trincas ou delaminações?</h3>
+            <input type="radio" name="propagacao2" id="182" class="grupo" required>
+            <label for="182">Com sinais</label>
+            <br>
+            <input type="radio" name="propagacao2" id="183" class="grupo" required>
+            <label for="183">Sem sinais</label>
+            <aside>
+                <input type="button" id="analise" value="Analisar" onclick="carregar27()">
+            </aside>
+        </section>
+    </form>
+    <script src="condicionais02.js"></script>
+    <script src="condicionais01.js"></script>
+    <script src="selected.js"></script>
+</body>
+
+</html>
