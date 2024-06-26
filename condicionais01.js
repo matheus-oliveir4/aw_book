@@ -367,6 +367,7 @@ function carregar7() {
   else if (ftamB[0].checked || ftamB[1].checked) {
     selectElement.selectedIndex = indiceOpition1
     selectElement1.selectedIndex = indiceOpition1
+    selectElement2.selectedIndex = indiceOpition1
     form.style.display = 'none';
   }
 }
