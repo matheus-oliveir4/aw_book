@@ -184,6 +184,10 @@
                             <option value="19">Stop the turbine and repair</option>
                             <option value="20">Immediate clean up</option>
                             <option value="21">Repair within 1 week</option>
+                            <option value="22">Must be reinspect within 12 months and repair in 24 months</option>
+                            <option value="23">Can Run, reinspect or plan repair within 6 months</option>
+                            <option value="24">Can Run, reinspect or plan repair within 12 months </option>
+
                             
                             
                         </select>
@@ -750,9 +754,13 @@
             <h3>Qual o comprimento da trinca?</h3>
             <input type="radio" name="largTc" id="99" class="grupo" required>
             <label for="99">Comprimento < 300 mm</label>
-                    <br>
-                    <input type="radio" name="largTc" id="100" class="grupo" required>
-                    <label for="100">Comprimento > 500 mm</label>
+            <br>
+            <input type="radio" name="largTc" id="99.1" class="grupo" required>
+            <label for="99.1">500 mm ≥ Comprimento
+                ≥300 mm </label>
+            <br>
+            <input type="radio" name="largTc" id="100" class="grupo" required>
+            <label for="100">Comprimento > 500 mm</label>
         </section>
         <aside>
             <input type="button" id="analise" value="Analisar" onclick="carregar12()">
@@ -841,18 +849,18 @@
             <label for="113">Não</label>
         </section>
         <section class="SecEspLC">
-            <h3>Qual a espessura da linha de colagem?</h3>
+            <h3>Qual a dimensão da falha na colagem?</h3>
             <input type="radio" name="espL" id="114" class="grupo" required>
-            <label for="114">Espessura ≤10 mm</label>
+            <label for="114">Falha de colagem ≤10 mm</label>
             <br>
             <input type="radio" name="espL" id="115" class="grupo" required>
-            <label for="115">10 mm < Espessura ≤20 mm </label>
+            <label for="115">10 mm < Falha de colagem ≤20 mm </label>
                     <br>
                     <input type="radio" name="espL" id="116" class="grupo" required>
-                    <label for="116">20 mm < Espessura ≤30 mm</label>
+                    <label for="116">20 mm < Falha de colagem ≤30 mm</label>
                             <br>
                             <input type="radio" name="espL" id="117" class="grupo" required>
-                            <label for="117">Espessura > 30 mm</label>
+                            <label for="117">Falha de colagem > 30 mm</label>
                             <br>
         </section>
         <section class="SecSinais">
@@ -959,9 +967,10 @@
     <form name="formMateriaisSoltos" method="phost" class="form" id="form18">
         <h3>Materiais soltos em geral - Interno da pá</h3>
         <section class="SecMat">
-            <h3>Qual tipo de material se encontra solto no interno da pá?</h3>
+            <h3>Qual situação ou tipo de material se encontra solto no interno da pá?</h3>
             <input type="radio" name="MatSol" id="137" class="grupo" required>
-            <label for="137">Fragmentos de qualquer material </label>
+            <label for="137">Fragmentos de quaisquer material soltos no interno da pá
+            </label>
             <br>
             <section>
                 <input type="radio" name="MatMet" id="138" class="grupo" required>
@@ -983,7 +992,7 @@
         <section class="SecComp">
             <h3>Qual o tamanho da delaminação em qualquer direção?</h3>
             <input type="radio" name="tamDC" id="140" class="grupo" required>
-            <label for="140">Tamanho em < 300 mm </label>
+            <label for="140">Tamanho < 300 mm </label>
                     <br>
                     <input type="radio" name="tamDC" id="141" class="grupo" required>
                     <label for="141">700 mm ≥ Tamanho ≥ 300 mm</label>
@@ -996,7 +1005,7 @@
         </section>
         <br>
         <section class="SecSinais">
-            <h3>Sinais de presença de fibras danificdas?</h3>
+            <h3>Presença de fibras danificdas?</h3>
             <input type="radio" name="propagação14" id="144" class="grupo" required>
             <label for="144">Sem sinais</label>
             <br>
@@ -1036,7 +1045,7 @@
         <section class="SecSinais">
             <h3>Situação do dano?</h3>
             <input type="radio" name="1propagação16" id="150" class="grupo" required>
-            <label for="150">Dano sem propagação de trinca</label>
+            <label for="150">Dano sem propagação </label>
             <br>
             <input type="radio" name="2propagação16" id="151" class="grupo" required>
             <label for="151">Dano em ambos os lados ou R na mesma posição</label>

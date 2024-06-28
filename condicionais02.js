@@ -98,6 +98,7 @@ function carregar16() {
     else if (squezz[0].checked) {
         selectElement.selectedIndex = indiceOpition1
         selectElement1.selectedIndex = indiceOpition1
+        selectElement2.selectedIndex = indiceOpition1
         form.style.display = 'none';
     }
 }
@@ -117,13 +118,13 @@ function carregar17() {
     else if (comp[0].checked && larg[1].checked) {
         selectElement.selectedIndex = indiceOpition5
         selectElement1.selectedIndex = indiceOpition5
-        selectElement2.selectedIndex = indiceOpition5
+        selectElement2.selectedIndex = indiceOpition4
         form.style.display = 'none';
     }
     else if (larg[0].checked && comp[0].checked) {
         selectElement.selectedIndex = indiceOpition4
         selectElement1.selectedIndex = indiceOpition4
-        selectElement2.selectedIndex = indiceOpition4
+        selectElement2.selectedIndex = indiceOpition9
         form.style.display = 'none';
     }
 }
@@ -138,11 +139,13 @@ function carregar18() {
         selectElement.selectedIndex = indiceOpition4
         selectElement1.selectedIndex = indiceOpition4
         selectElement2.selectedIndex = indiceOpition7
+        form.style.display = 'none';
 
         form.style.display = 'none';
     } else if (mat2[0].checked) {
         selectElement.selectedIndex = indiceOpition1
         selectElement1.selectedIndex = indiceOpition1
+        selectElement2.selectedIndex = indiceOpition1
         form.style.display = 'none';
 
     }
@@ -197,21 +200,25 @@ function carregar20() {
     if (prop3[0].checked) {
         selectElement.selectedIndex = indiceOpition6
         selectElement1.selectedIndex = indiceOpition6
+        selectElement2.selectedIndex = indiceOpition6
         form.style.display = 'none';
     }
     else if (prop2[0].checked || comp[1].checked) {
         selectElement.selectedIndex = indiceOpition5
         selectElement1.selectedIndex = indiceOpition5
+        selectElement2.selectedIndex = indiceOpition10
         form.style.display = 'none';
     }
     else if (comp[0].checked) {
         selectElement.selectedIndex = indiceOpition4
         selectElement1.selectedIndex = indiceOpition4
+        selectElement2.selectedIndex = indiceOpition11
         form.style.display = 'none';
     }
     else if (prop1[0].checked && tempo[0].checked) {
         selectElement.selectedIndex = indiceOpition3
         selectElement1.selectedIndex = indiceOpition3
+        selectElement2.selectedIndex = indiceOpition3
         form.style.display = 'none';
     }
 }
@@ -248,7 +255,12 @@ function carregar22() {
     var danoArea = document.getElementsByName('danoArea')
     var distanC = document.getElementsByName('distanC')
 
-    if (danoR[0].checked) {
+    if (danoR[0].checked ) {
+        selectElement.selectedIndex = indiceOpition6
+        selectElement1.selectedIndex = indiceOpition6
+        selectElement2.selectedIndex = indiceOpition6
+        form.style.display = 'none';}
+    else if (danoArea[1].checked && distanC[1].checked) {
         selectElement.selectedIndex = indiceOpition6
         selectElement1.selectedIndex = indiceOpition6
         selectElement2.selectedIndex = indiceOpition6
@@ -258,7 +270,7 @@ function carregar22() {
         selectElement1.selectedIndex = indiceOpition6
         selectElement2.selectedIndex = indiceOpition6
         form.style.display = 'none';
-    } else if (danoArea[1].checked && distanC[1].checked) {
+    } else if (danoArea[0].checked && distanC[1].checked) {
         selectElement.selectedIndex = indiceOpition6
         selectElement1.selectedIndex = indiceOpition6
         selectElement2.selectedIndex = indiceOpition6
@@ -278,8 +290,8 @@ function carregar22() {
         selectElement1.selectedIndex = indiceOpition5
         selectElement2.selectedIndex = indiceOpition5
         form.style.display = 'none';
-    }
-}
+    }}
+
 
 
 
@@ -322,6 +334,8 @@ function carregar24() {
     } else if (diam1[0].checked && diam2[0].checked && diam3[0].checked) {
         selectElement.selectedIndex = indiceOpition1
         selectElement1.selectedIndex = indiceOpition1
+        selectElement2.selectedIndex = indiceOpition1
+        form.style.display = 'none';
 
     }
 }

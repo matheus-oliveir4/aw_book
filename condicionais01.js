@@ -14,7 +14,9 @@ var indiceOpition5 = 5; /*High Structural / sev4 / Repair within 3 months*/
 var indiceOpition6 = 6; /*Critical Structural / sev5 / Stop the turbine and repair*/
 var indiceOpition7 = 7; /*Immediate clean up*/
 var indiceOpition8 = 8; /*Repair within 1 week*/
-
+var indiceOpition9 = 9; /*Must be reinspect within 12 months and repair in 24 months*/
+var indiceOpition10 = 10; /* Can Run, reinspect or plan repair within 6 months */
+var indiceOpition11 = 11;/* Can Run, reinspect or plan repair within 12 months */
 /*Condicionais para Rugas - Longitudinal*/
 function carregar0() {
   var form = document.getElementById('form0')
@@ -411,7 +413,7 @@ function carregar9() {
   var fcompri = document.getElementsByName('compTl')
   var fluz = document.getElementsByName('luz6')
 
-  if (fcompri[2].checked && fluz[0].checked) {
+  if (fcompri[2].checked || fluz[0].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
     selectElement2.selectedIndex = indiceOpition6
@@ -481,16 +483,24 @@ function carregar12() {
   var form = document.getElementById('form12')
   var compriT = document.getElementsByName('largTc')
 
-  if (compriT[1].checked) {
+  if (compriT[2].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
     selectElement2.selectedIndex = indiceOpition6
+    form.style.display = 'none';
+  }
+
+  else if(compriT[1].checked){
+    selectElement.selectedIndex = indiceOpition5
+    selectElement1.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (compriT[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
     selectElement2.selectedIndex = indiceOpition4
+    form.style.display = 'none';
   }
 }
 /*Condicionais para Descolamentos  - Danos na alma/T-pultrudado*/
